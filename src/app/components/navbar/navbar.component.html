@@ -1,0 +1,4 @@
+<li class="material-symbols-outlined" *ngFor="let o of options; let i = index" tabindex="{{ i }}"
+  (click)="selectedOption = i" [class.selected]="selectedOption == i">
+  {{ o.icon }}
+</li>

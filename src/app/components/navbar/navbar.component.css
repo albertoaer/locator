@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  padding: 0;
+  margin: 0;
+  padding: 1em 1em;
+  background-color: var(--nav);
+  border-radius: 0.5em;
+}
+
+li {
+  display: flex;
+  width: 2em;
+  height: 2em;
+  background-color: transparent;
+  font-weight: bold;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  transition-property: transform, box-shadow;
+  transition-duration: 200ms;
+}
+
+li:hover {
+  transform: translateX(0.5em);
+  box-shadow: -0.3em 0em 1em black;
+  transition-property: transform, box-shadow;
+  transition-duration: 200ms;
+  cursor: pointer;
+}
+
+li.selected {
+  box-shadow: -0.3em 0em 1em black;
+  transform: translateX(0.25em);
+  transition-property: transform, box-shadow;
+  transition-duration: 300ms;
+}
