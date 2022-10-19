@@ -1,0 +1,24 @@
+<svg:image *ngIf="artifact.imageURL else circle"
+[attr.x]="x - r"
+[attr.y]="y - r"
+[attr.width]="2 * r"
+[attr.height]="2 * r"
+[attr.transform]="transform"
+[attr.href]="artifact.imageURL"></svg:image>
+
+<ng-template #circle>
+  <svg:circle
+  [attr.r]="r"
+  [attr.cx]="x"
+  [attr.cy]="y"
+  [attr.transform]="transform"></svg:circle>
+</ng-template>
+
+<svg:text
+[attr.x]="x + r"
+[attr.y]="y + r"
+[attr.transform]="transform"
+[attr.font-size]="fontSize"
+>
+  {{ artifact.name }}
+</svg:text>
