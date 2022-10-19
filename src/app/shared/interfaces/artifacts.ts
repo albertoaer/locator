@@ -30,4 +30,5 @@ export interface Artifact {
   id: number;
   name: string;
   location: [number, number];
+  imageURL: string | null;
 }

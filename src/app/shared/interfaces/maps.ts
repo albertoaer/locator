@@ -9,8 +9,9 @@ export abstract class MapProvider {
 
 export abstract class GeoMap {
     abstract projection(): d3.GeoProjection;
-    abstract apply(selection: d3.Selection<SVGGElement, any, any, any>): Promise<void>;
-
+    abstract apply(selection: d3.Selection<SVGGElement, any, any, any>): void;
+    abstract domain(): [[number, number], [number, number]];
+    
     coords([lat, lon]: [number, number]): [number, number] {
         return this.projection()([lon, lat]) as [number, number];
     }
