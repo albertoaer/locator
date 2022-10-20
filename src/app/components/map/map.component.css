@@ -22,12 +22,17 @@
   top: 1em;
 }
 
+#mapPicker > * {
+  cursor: pointer;
+}
+
 button {
   display: block;
   width: 2em;
   height: 2em;
   font: bold;
   font-size: larger;
+  cursor: pointer;
 }
 
 svg {
