@@ -1,0 +1,12 @@
+:host {
+  user-select: none;
+}
+
+#content {
+  display: flex;
+  justify-content: center;
+}
+
+app-map {
+  margin: 0 2em;
+}
