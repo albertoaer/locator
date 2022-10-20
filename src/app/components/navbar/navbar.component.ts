@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ul[navbar]',
@@ -8,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
 
   options: { name: string, icon: string }[] = [
-    { name: 'Artifacts', icon: 'devices' },
-    { name: 'Edit', icon: 'edit' }
+    { name: 'Artifacts', icon: 'location_on' },
+    { name: 'Terminal', icon: 'terminal' },
+    { name: 'Edit', icon: 'edit' },
   ]
 
   selectedOption: number = -1;
