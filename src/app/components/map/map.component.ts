@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Input } from '@angular/core';
 
 import { MapProvider } from 'src/app/shared/interfaces/maps';
 import { MercatorMapProviderService } from 'src/app/services/mercator-map-provider.service';
@@ -18,6 +18,12 @@ export class MapComponent implements AfterViewInit {
 
   artifacts: Artifact[] = [];
   zoom: d3.ZoomTransform | undefined = undefined;
+
+  @Input()
+  width: number = 800;
+
+  @Input()
+  height: number = 600;
 
   constructor(
     protected mapProvider: MapProvider,

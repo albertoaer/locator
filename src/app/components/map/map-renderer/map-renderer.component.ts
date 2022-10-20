@@ -24,12 +24,6 @@ export class MapRendererComponent {
   constructor(protected self: ElementRef, protected mapProvider: MapProvider) {
     this.g = d3.select(self.nativeElement);
 
-    this.g.append("rect")
-    .attr("width", "100%")
-    .attr("height", "100%")
-    .attr("fill", "red")
-    .attr('fill-opacity', '20%');
-
     this.g.append('g').attr('class', 'map');
 
     this.mapProvider.mapUpdated().subscribe(x => {

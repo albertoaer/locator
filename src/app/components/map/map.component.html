@@ -1,19 +1,23 @@
-<div id="zoom">
-	<button (click)="$any(mapView).applyZoom(1.6)"> + </button>
-	<button (click)="$any(mapView).applyZoom(0.4)"> - </button>
-</div>
-<div id="mapPicker">
-	<select name="Map" id="" (change)="mapProvider.loadMap($any($event.target).value)">
-		<option *ngFor="let map of this.mapProvider.maps()" [value]="map">
-			{{ map | titlecase }}
-		</option>
-	</select>
-</div>
-<svg mapView #mapView (zoomEvent)="applyZoom($event)" width="1000" height="600">
-	<g mapRenderer [zoom]="zoom"></g>
-	<g>
-		<g artifactRenderer *ngFor="let artifact of artifacts" [zoom]="zoom" [artifact]="artifact">
-
+<div id="main">
+	<div id="zoom">
+		<button class="material-symbols-outlined" (click)="$any(mapView).applyZoom(1.6)">
+			add
+		</button>
+		<button class="material-symbols-outlined" (click)="$any(mapView).applyZoom(0.4)">
+			remove
+		</button>
+	</div>
+	<div id="mapPicker">
+		<select name="Map" (change)="mapProvider.loadMap($any($event.target).value)">
+			<option *ngFor="let map of this.mapProvider.maps()" [value]="map">
+				{{ map | titlecase }}
+			</option>
+		</select>
+	</div>
+	<svg mapView #mapView (zoomEvent)="applyZoom($event)" [attr.width]="width" [attr.height]="height">
+		<g mapRenderer [zoom]="zoom"/>
+		<g>
+			<g artifactRenderer *ngFor="let artifact of artifacts" [zoom]="zoom" [artifact]="artifact"/>
 		</g>
-	</g>
-</svg>
+	</svg>
+</div>

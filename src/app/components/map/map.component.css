@@ -1,23 +1,25 @@
-:host {
+#main {
   display: block;
   position: relative;
   width: fit-content;
   height: fit-content;
+  background-color: var(--map);
+  border-radius: 0.5em;
 }
 
-div {
+#mapPicker, #zoom {
   position: absolute;
 }
 
 #zoom {
   z-index: 1;
-  left: 0.3em;
-  top: 0.3em;
+  left: 1em;
+  top: 1em;
 }
 
 #mapPicker {
-  right: 0.3em;
-  top: 0.3em;
+  right: 1em;
+  top: 1em;
 }
 
 button {
