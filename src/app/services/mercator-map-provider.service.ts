@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 import { GeoMap, MapProvider } from '../shared/interfaces';
 import { BasicMap } from '../shared/models';
 import * as d3 from 'd3';
@@ -8,7 +8,7 @@ import * as d3 from 'd3';
   providedIn: 'root'
 })
 export class MercatorMapProviderService extends MapProvider {
-  static async loadMap(projection: d3.GeoProjection, url: string, objects: string, stroke: number): Promise<GeoMap> {
+  static async loadMap(url: string, objects: string, stroke: number): Promise<GeoMap> {
     return new BasicMap(
       d3.geoMercator().scale(2400).translate([600, 2100]),
       await d3.json(url) as any,
@@ -18,10 +18,9 @@ export class MercatorMapProviderService extends MapProvider {
   }
 
   private static readonly availableMaps: {[key: string]: Promise<GeoMap>} = {
-    
   }
 
-  private mapChange: Subject<GeoMap> = new Subject();
+  private mapChange: ReplaySubject<GeoMap> = new ReplaySubject();
 
   maps = () => Object.keys(MercatorMapProviderService.availableMaps);
   
