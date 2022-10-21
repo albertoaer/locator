@@ -1,12 +1,14 @@
 :root {
-  --nav: #E6301C;
-  --background: #43AFF0;
-  --map: #367AA3;
-  --sidenav: #F0EF7B;
+  --background: #85081D;
+  --map: #D13021;
+  --sidenav: #D11737;
   --text: white;
 }
 
 body {
   background-color: var(--background);
   color: var(--text);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 0;
+  padding: 2em;
 }
