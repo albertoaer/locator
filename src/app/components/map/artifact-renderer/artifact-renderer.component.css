@@ -1,0 +1,29 @@
+circle, image {
+  fill: var(--text);
+  animation: anim;
+  animation-duration: 1500ms;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+circle, image {
+  fill: var(--text);
+}
+
+circle:hover, image:hover {
+  animation: none;
+}
+
+@keyframes anim {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+text {
+  fill: var(--text);
+}

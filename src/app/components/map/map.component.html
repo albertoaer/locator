@@ -17,7 +17,7 @@
 	<svg mapView #mapView (zoomEvent)="applyZoom($event)" [attr.width]="width" [attr.height]="height">
 		<g mapRenderer [zoom]="zoom"/>
 		<g>
-			<g artifactRenderer *ngFor="let artifact of artifacts" [zoom]="zoom" [artifact]="artifact"/>
+			<g artifactRenderer *ngFor="let artifact of artifactManager.artifacts() | async" [zoom]="zoom" [artifact]="artifact"/>
 		</g>
 	</svg>
 </div>

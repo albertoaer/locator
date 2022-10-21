@@ -16,7 +16,6 @@ import { MockArtifactManagerService } from 'src/app/services/mock-artifact-manag
 })
 export class MapComponent implements AfterViewInit {
 
-  artifacts: Artifact[] = [];
   zoom: d3.ZoomTransform | undefined = undefined;
 
   @Input()
@@ -29,7 +28,6 @@ export class MapComponent implements AfterViewInit {
     protected mapProvider: MapProvider,
     protected artifactManager: ArtifactManager
   ) {
-    this.artifacts.push();
   }
   
   ngAfterViewInit(): void {
