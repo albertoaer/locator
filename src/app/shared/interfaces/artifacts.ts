@@ -5,6 +5,8 @@ export interface Artifact {
   name: string;
   location: [number, number];
   imageURL: string | null;
+  type?: string;
+  description?: string;
 }
 
 export abstract class ArtifactManager {
